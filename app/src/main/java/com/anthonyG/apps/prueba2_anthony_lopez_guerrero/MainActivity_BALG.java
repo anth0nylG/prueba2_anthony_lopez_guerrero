@@ -59,7 +59,7 @@ public class MainActivity_BALG extends AppCompatActivity {
 
         String user = getIntent().getExtras().get("usuario").toString();
         userName = findViewById(R.id.textViewUsr);
-        userName.setText("Usuario: " + user);
+        userName.setText("    Bienvenido, " + user);
     }
 
     @Override
