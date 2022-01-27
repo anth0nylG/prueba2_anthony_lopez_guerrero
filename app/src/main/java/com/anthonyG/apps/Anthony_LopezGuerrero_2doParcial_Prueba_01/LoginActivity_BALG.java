@@ -45,27 +45,15 @@ public class LoginActivity_BALG extends AppCompatActivity {
 
     private void ValidarUsuario(View view) {
 
-        ClienteDAL_BALG clienteDAL = new ClienteDAL_BALG(this);
-        String usr = editTextUsr.getText().toString();
-        String passwd = editTextPasswd.getText().toString();
-        Cliente_BALG cliente = new Cliente_BALG();
-//        cliente=clienteDAL.selectByUsrDAL(usr.toString());
-
-
-        if(cliente!=null)
+        if(editTextUsr.getText().equals("anthony") || editTextUsr.getText().equals("alexis") && editTextPasswd.getText().equals("anthony123") || editTextPasswd.getText().equals("anthony123"))
         {
-            Toast.makeText(this,"Hay Datos",Toast.LENGTH_SHORT).show();
-
-
-
+            Intent flags = new Intent(this, MainActivity_BALG.class);
+            startActivity(flags);
         }
         else
         {
-            Toast.makeText(this, "No se encontraron registros del cliente en la tabla", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
         }
-
-        Intent flags = new Intent(this, MainActivity_BALG.class);
-        startActivity(flags);
 
     }
 

@@ -28,7 +28,7 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name="com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01.SettingsActivity"
+            android:name="com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01.SettingsActivity_BALG"
             android:label="@string/title_activity_settings"
             android:parentActivityName="com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01.MainActivity_BALG"
             android:theme="@style/AppTheme.NoActionBar">

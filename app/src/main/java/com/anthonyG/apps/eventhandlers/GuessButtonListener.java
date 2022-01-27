@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01.MainActivityFragment_BALG;
 import com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01.R;
-import com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01.ResultsDialogFragment;
+import com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01.ResultsDialogFragment_BALG;
 import com.anthonyG.apps.lifecyclehelpers.QuizViewModel;
 
 public class GuessButtonListener implements OnClickListener {
@@ -37,7 +37,7 @@ public class GuessButtonListener implements OnClickListener {
 
             if (this.mainActivityFragmentBALG.getQuizViewModel().getCorrectAnswers()
                     == QuizViewModel.getFlagsInQuiz()) {
-                ResultsDialogFragment quizResults = new ResultsDialogFragment();
+                ResultsDialogFragment_BALG quizResults = new ResultsDialogFragment_BALG();
                 quizResults.setCancelable(false);
                 try {
                     quizResults.show(this.mainActivityFragmentBALG.getChildFragmentManager(), "Quiz Results");

@@ -11,7 +11,7 @@ import android.util.Log;
 
 import com.anthonyG.apps.lifecyclehelpers.QuizViewModel;
 
-public class ResultsDialogFragment extends DialogFragment{
+public class ResultsDialogFragment_BALG extends DialogFragment{
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

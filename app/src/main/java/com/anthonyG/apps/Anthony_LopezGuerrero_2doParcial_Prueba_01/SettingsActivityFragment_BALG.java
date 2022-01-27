@@ -7,7 +7,7 @@ import android.support.annotation.Nullable;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class SettingsActivityFragment extends PreferenceFragment {
+public class SettingsActivityFragment_BALG extends PreferenceFragment {
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

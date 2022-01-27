@@ -86,7 +86,7 @@ public class MainActivity_BALG extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent preferencesIntent = new Intent(this, SettingsActivity.class);
+        Intent preferencesIntent = new Intent(this, SettingsActivity_BALG.class);
         startActivity(preferencesIntent);
         return super.onOptionsItemSelected(item);
     }
