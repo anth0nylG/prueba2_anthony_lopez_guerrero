@@ -69,6 +69,7 @@ public class MainActivityFragment_BALG extends Fragment {
         this.guessTableRows = new TableRow[4];
         this.answerTextView = view.findViewById(R.id.answerTextView);
 
+        this.nivel = view.findViewById(R.id.textViewNivel);
 
 
         for (int i = 0; i < answersTableLayout.getChildCount(); i++) {
@@ -95,7 +96,7 @@ public class MainActivityFragment_BALG extends Fragment {
 
     public void updateGuessRows() {
 
-        /*switch (contador){
+        switch (contador){
             case 1:
                 this.quizViewModelBALG.setGuessRows("2");
                 break;
@@ -110,7 +111,7 @@ public class MainActivityFragment_BALG extends Fragment {
                 break;
             default:
                 this.quizViewModelBALG.setGuessRows("2");
-        }*/
+        }
 
         int numberOfGuessRows = this.quizViewModelBALG.getGuessRows();
         for (TableRow row : this.guessTableRows) {
@@ -145,8 +146,8 @@ public class MainActivityFragment_BALG extends Fragment {
             }
         }
 
-        /*nivel.setText("Nivel: " + String.valueOf(contador + 1));
-        contador++;*/
+        nivel.setText("Nivel: " + String.valueOf(contador + 1));
+        contador++;
 
         this.updateGuessRows();
         this.loadNextFlag();
