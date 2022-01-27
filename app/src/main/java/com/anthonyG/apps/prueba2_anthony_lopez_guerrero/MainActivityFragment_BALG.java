@@ -146,7 +146,7 @@ public class MainActivityFragment_BALG extends Fragment {
             }
         }
 
-        nivel.setText("Nivel: " + String.valueOf(contador + 1));
+        nivel.setText("    Nivel: " + String.valueOf(contador + 1));
         contador++;
 
         this.updateGuessRows();
