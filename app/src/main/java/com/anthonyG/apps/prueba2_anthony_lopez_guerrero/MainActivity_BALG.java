@@ -45,6 +45,10 @@ public class MainActivity_BALG extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Bundle user = getIntent().getExtras();
+        userName = findViewById(R.id.editTextUsuario);
+        userName.s
+
         super.onCreate(savedInstanceState);
         this.quizViewModel = ViewModelProviders.of(this).get(QuizViewModel.class);
         this.preferencesChangeListener = new PreferenceChangeListener(this);
