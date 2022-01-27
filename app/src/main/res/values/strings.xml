@@ -30,4 +30,7 @@
     <string name="btn_buscar">Buscar Por Codigo</string>
     <string name="btn_eliminar">Eliminar</string>
     <string name="btn_editar">Editar</string>
+
+    <string name="hnt_usr">Usuario</string>
+    <string name="hnt_passwd">Contraseña</string>
 </resources>
