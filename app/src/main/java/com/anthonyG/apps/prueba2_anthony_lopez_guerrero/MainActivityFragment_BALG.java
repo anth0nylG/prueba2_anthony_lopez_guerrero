@@ -95,6 +95,23 @@ public class MainActivityFragment_BALG extends Fragment {
 
     public void updateGuessRows() {
 
+        /*switch (contador){
+            case 1:
+                this.quizViewModelBALG.setGuessRows("2");
+                break;
+            case 2:
+                this.quizViewModelBALG.setGuessRows("4");
+                break;
+            case 3:
+                this.quizViewModelBALG.setGuessRows("6");
+                break;
+            case 4:
+                this.quizViewModelBALG.setGuessRows("8");
+                break;
+            default:
+                this.quizViewModelBALG.setGuessRows("2");
+        }*/
+
         int numberOfGuessRows = this.quizViewModelBALG.getGuessRows();
         for (TableRow row : this.guessTableRows) {
             row.setVisibility(View.GONE);
@@ -111,6 +128,10 @@ public class MainActivityFragment_BALG extends Fragment {
         this.quizViewModelBALG.resetCorrectAnswers();
         this.quizViewModelBALG.clearQuizCountriesList();
 
+        if (contador > 4) {
+            contador = 1;
+        }
+
         int flagCounter = 1;
         int numberOfFlags = this.quizViewModelBALG.getFileNameList().size();
         while (flagCounter <= QuizViewModel_BALG.getFlagsInQuiz()) {
@@ -123,6 +144,9 @@ public class MainActivityFragment_BALG extends Fragment {
                 ++flagCounter;
             }
         }
+
+        /*nivel.setText("Nivel: " + String.valueOf(contador + 1));
+        contador++;*/
 
         this.updateGuessRows();
         this.loadNextFlag();
