@@ -35,11 +35,11 @@ public class LoginActivity_BALG extends AppCompatActivity {
     }
 
     private void ValidarUsuario(View view) {
-
         if (editTextUsr.getText().toString().equals("anthony") && editTextPasswd.getText().toString().equals("anthony123")
                 || (editTextUsr.getText().toString().equals("alexis") && editTextPasswd.getText().toString().equals("alexis123")))
         {
             Intent flags = new Intent(this, MainActivity_BALG.class);
+            flags.putExtra("usuario", editTextUsr.getText().toString());
             startActivity(flags);
         }
         else

@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.anthonyG.apps.eventhandlers.PreferenceChangeListener;
 import com.anthonyG.apps.lifecyclehelpers.QuizViewModel;
@@ -23,6 +24,8 @@ public class MainActivity_BALG extends AppCompatActivity {
     private MainActivityFragment_BALG quizFragment;
     private QuizViewModel quizViewModel;
     private OnSharedPreferenceChangeListener preferencesChangeListener;
+
+    private TextView userName;
 
     private void setSharedPreferences() {
         // set default values in the app's SharedPreferences
@@ -45,10 +48,6 @@ public class MainActivity_BALG extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Bundle user = getIntent().getExtras();
-        userName = findViewById(R.id.editTextUsuario);
-        userName.s
-
         super.onCreate(savedInstanceState);
         this.quizViewModel = ViewModelProviders.of(this).get(QuizViewModel.class);
         this.preferencesChangeListener = new PreferenceChangeListener(this);
@@ -57,6 +56,10 @@ public class MainActivity_BALG extends AppCompatActivity {
         setSupportActionBar(toolbar);
         this.setSharedPreferences();
         this.screenSetUp();
+
+        String user = getIntent().getExtras().get("usuario").toString();
+        userName = findViewById(R.id.textViewUsr);
+        userName.setText("Usuario: " + user);
     }
 
     @Override
