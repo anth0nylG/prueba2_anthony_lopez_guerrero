@@ -13,8 +13,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.anthonyG.apps.eventhandlers.PreferenceChangeListener;
-import com.anthonyG.apps.lifecyclehelpers.QuizViewModel;
+import com.anthonyG.apps.eventhandlers.PreferenceChangeListener_BALG;
+import com.anthonyG.apps.lifecyclehelpers.QuizViewModel_BALG;
 
 public class MainActivity_BALG extends AppCompatActivity {
     public static final String CHOICES = "pref_numberOfChoices";
@@ -22,7 +22,7 @@ public class MainActivity_BALG extends AppCompatActivity {
     private boolean deviceIsPhone = true;
     private boolean preferencesChanged = true;
     private MainActivityFragment_BALG quizFragment;
-    private QuizViewModel quizViewModel;
+    private QuizViewModel_BALG quizViewModelBALG;
     private OnSharedPreferenceChangeListener preferencesChangeListener;
 
     private TextView userName;
@@ -49,8 +49,8 @@ public class MainActivity_BALG extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.quizViewModel = ViewModelProviders.of(this).get(QuizViewModel.class);
-        this.preferencesChangeListener = new PreferenceChangeListener(this);
+        this.quizViewModelBALG = ViewModelProviders.of(this).get(QuizViewModel_BALG.class);
+        this.preferencesChangeListener = new PreferenceChangeListener_BALG(this);
         setContentView(R.layout.activity_main_balg);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -68,9 +68,10 @@ public class MainActivity_BALG extends AppCompatActivity {
         if (preferencesChanged) {
             this.quizFragment = (MainActivityFragment_BALG) getSupportFragmentManager()
                     .findFragmentById(R.id.quizFragment);
-            this.quizViewModel.setGuessRows(PreferenceManager.getDefaultSharedPreferences(this)
-                    .getString(CHOICES, null));
-            this.quizViewModel.setRegionsSet(PreferenceManager.getDefaultSharedPreferences(this)
+
+            this.quizViewModelBALG.setGuessRows("2");
+
+            this.quizViewModelBALG.setRegionsSet(PreferenceManager.getDefaultSharedPreferences(this)
                     .getStringSet(REGIONS, null));
 
             this.quizFragment.resetQuiz();
@@ -107,8 +108,8 @@ public class MainActivity_BALG extends AppCompatActivity {
         return this.quizFragment;
     }
 
-    public QuizViewModel getQuizViewModel() {
-        return quizViewModel;
+    public QuizViewModel_BALG getQuizViewModel() {
+        return quizViewModelBALG;
     }
 
     public static String getCHOICES() {

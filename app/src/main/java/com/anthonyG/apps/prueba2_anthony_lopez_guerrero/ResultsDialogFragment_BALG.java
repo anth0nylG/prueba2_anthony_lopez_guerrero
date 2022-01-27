@@ -9,7 +9,7 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.anthonyG.apps.lifecyclehelpers.QuizViewModel;
+import com.anthonyG.apps.lifecyclehelpers.QuizViewModel_BALG;
 
 public class ResultsDialogFragment_BALG extends DialogFragment{
 
@@ -21,8 +21,8 @@ public class ResultsDialogFragment_BALG extends DialogFragment{
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        final QuizViewModel quizViewModel = ViewModelProviders.of(getActivity()).get(QuizViewModel.class);
-        int totalGuesses = quizViewModel.getTotalGuesses();
+        final QuizViewModel_BALG quizViewModelBALG = ViewModelProviders.of(getActivity()).get(QuizViewModel_BALG.class);
+        int totalGuesses = quizViewModelBALG.getTotalGuesses();
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setMessage(
                 getString(R.string.results, totalGuesses, (1000 / (double) totalGuesses)));
@@ -35,11 +35,11 @@ public class ResultsDialogFragment_BALG extends DialogFragment{
                     try{
                         quizFragment.resetQuiz();
                     }catch (Exception e){
-                        Log.e(quizViewModel.getTag(),"Unable to call resetQuiz()", e);
+                        Log.e(quizViewModelBALG.getTag(),"Unable to call resetQuiz()", e);
                     }
                 }
                 catch (Exception e){
-                    Log.e(quizViewModel.getTag(),"Unable to get ActivityMainFragment", e);
+                    Log.e(quizViewModelBALG.getTag(),"Unable to get ActivityMainFragment", e);
                 }
             }
         });

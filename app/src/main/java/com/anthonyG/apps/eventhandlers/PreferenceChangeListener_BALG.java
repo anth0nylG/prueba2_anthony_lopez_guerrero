@@ -9,10 +9,10 @@ import com.anthonyG.apps.prueba2_anthony_lopez_guerrero.R;
 
 import java.util.Set;
 
-public class PreferenceChangeListener implements OnSharedPreferenceChangeListener {
+public class PreferenceChangeListener_BALG implements OnSharedPreferenceChangeListener {
     private MainActivity_BALG mainActivityBALG;
 
-    public PreferenceChangeListener(MainActivity_BALG mainActivityBALG) {
+    public PreferenceChangeListener_BALG(MainActivity_BALG mainActivityBALG) {
         this.mainActivityBALG = mainActivityBALG;
     }
 

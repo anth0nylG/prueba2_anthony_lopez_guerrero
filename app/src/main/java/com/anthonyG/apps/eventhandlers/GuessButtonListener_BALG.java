@@ -9,13 +9,13 @@ import android.widget.Button;
 import com.anthonyG.apps.prueba2_anthony_lopez_guerrero.MainActivityFragment_BALG;
 import com.anthonyG.apps.prueba2_anthony_lopez_guerrero.R;
 import com.anthonyG.apps.prueba2_anthony_lopez_guerrero.ResultsDialogFragment_BALG;
-import com.anthonyG.apps.lifecyclehelpers.QuizViewModel;
+import com.anthonyG.apps.lifecyclehelpers.QuizViewModel_BALG;
 
-public class GuessButtonListener implements OnClickListener {
+public class GuessButtonListener_BALG implements OnClickListener {
     private MainActivityFragment_BALG mainActivityFragmentBALG;
     private Handler handler;
 
-    public GuessButtonListener(MainActivityFragment_BALG mainActivityFragmentBALG) {
+    public GuessButtonListener_BALG(MainActivityFragment_BALG mainActivityFragmentBALG) {
         this.mainActivityFragmentBALG = mainActivityFragmentBALG;
         this.handler = new Handler();
     }
@@ -36,13 +36,13 @@ public class GuessButtonListener implements OnClickListener {
             this.mainActivityFragmentBALG.disableButtons();
 
             if (this.mainActivityFragmentBALG.getQuizViewModel().getCorrectAnswers()
-                    == QuizViewModel.getFlagsInQuiz()) {
+                    == QuizViewModel_BALG.getFlagsInQuiz()) {
                 ResultsDialogFragment_BALG quizResults = new ResultsDialogFragment_BALG();
                 quizResults.setCancelable(false);
                 try {
                     quizResults.show(this.mainActivityFragmentBALG.getChildFragmentManager(), "Quiz Results");
                 } catch (NullPointerException e) {
-                    Log.e(QuizViewModel.getTag(),
+                    Log.e(QuizViewModel_BALG.getTag(),
                             "GuessButtonListener: this.mainActivityFragment.getFragmentManager() " +
                                     "returned null",
                             e);
