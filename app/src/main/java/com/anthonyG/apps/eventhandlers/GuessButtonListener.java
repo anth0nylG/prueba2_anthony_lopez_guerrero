@@ -6,9 +6,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01.MainActivityFragment_BALG;
-import com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01.R;
-import com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01.ResultsDialogFragment_BALG;
+import com.anthonyG.apps.prueba2_anthony_lopez_guerrero.MainActivityFragment_BALG;
+import com.anthonyG.apps.prueba2_anthony_lopez_guerrero.R;
+import com.anthonyG.apps.prueba2_anthony_lopez_guerrero.ResultsDialogFragment_BALG;
 import com.anthonyG.apps.lifecyclehelpers.QuizViewModel;
 
 public class GuessButtonListener implements OnClickListener {

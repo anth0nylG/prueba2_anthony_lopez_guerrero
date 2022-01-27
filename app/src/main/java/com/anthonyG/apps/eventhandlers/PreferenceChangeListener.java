@@ -4,8 +4,8 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.widget.Toast;
 
-import com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01.MainActivity_BALG;
-import com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01.R;
+import com.anthonyG.apps.prueba2_anthony_lopez_guerrero.MainActivity_BALG;
+import com.anthonyG.apps.prueba2_anthony_lopez_guerrero.R;
 
 import java.util.Set;
 

@@ -1,4 +1,4 @@
-package com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01;
+package com.anthonyG.apps.prueba2_anthony_lopez_guerrero;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -44,7 +44,7 @@ public class LoginActivity_BALG extends AppCompatActivity {
         }
         else
         {
-            Toast.makeText(this, "Usuario o contraseña incorrecto", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
         }
     }
 }

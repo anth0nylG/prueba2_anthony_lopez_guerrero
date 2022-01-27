@@ -1,4 +1,4 @@
-package com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01;
+package com.anthonyG.apps.prueba2_anthony_lopez_guerrero;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
@@ -48,7 +48,7 @@ public class MainActivity_BALG extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         this.quizViewModel = ViewModelProviders.of(this).get(QuizViewModel.class);
         this.preferencesChangeListener = new PreferenceChangeListener(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_balg);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         this.setSharedPreferences();

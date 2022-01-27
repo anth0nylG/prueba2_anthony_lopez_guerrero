@@ -1,4 +1,4 @@
-package com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01;
+package com.anthonyG.apps.prueba2_anthony_lopez_guerrero;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

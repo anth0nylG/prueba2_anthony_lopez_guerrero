@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01">
+    package="com.anthonyG.apps.prueba2_anthony_lopez_guerrero">
 
     <application
         android:allowBackup="true"
@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01.CrudClientes_BALG"
+            android:name="com.anthonyG.apps.prueba2_anthony_lopez_guerrero.CrudClientes_BALG"
             android:exported="false" />
         <activity
-            android:name="com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01.LoginActivity_BALG" >
+            android:name="com.anthonyG.apps.prueba2_anthony_lopez_guerrero.LoginActivity_BALG" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,19 +22,19 @@
         </activity>
 
         <activity
-            android:name="com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01.MainActivity_BALG"
+            android:name="com.anthonyG.apps.prueba2_anthony_lopez_guerrero.MainActivity_BALG"
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name="com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01.SettingsActivity_BALG"
+            android:name="com.anthonyG.apps.prueba2_anthony_lopez_guerrero.SettingsActivity_BALG"
             android:label="@string/title_activity_settings"
-            android:parentActivityName="com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01.MainActivity_BALG"
+            android:parentActivityName="com.anthonyG.apps.prueba2_anthony_lopez_guerrero.MainActivity_BALG"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01.MainActivity_BALG" />
+                android:value="com.anthonyG.apps.prueba2_anthony_lopez_guerrero.MainActivity_BALG" />
         </activity>
     </application>
 

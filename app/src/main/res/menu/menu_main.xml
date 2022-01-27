@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01.MainActivity_BALG">
+    tools:context="com.anthonyG.apps.prueba2_anthony_lopez_guerrero.MainActivity_BALG">
     <item
         android:id="@+id/action_settings"
         android:icon="@drawable/ic_settings_black_24dp"
