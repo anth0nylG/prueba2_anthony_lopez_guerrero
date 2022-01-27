@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class BALG_CrudClientes extends AppCompatActivity {
+public class CrudClientes_BALG extends AppCompatActivity {
 
     private EditText editTextCodigo;
     private EditText editTextNombre;
@@ -74,7 +74,7 @@ public class BALG_CrudClientes extends AppCompatActivity {
 
     private void InsertarConClase() {
 
-        BALG_ClienteDAL clienteDAL = new BALG_ClienteDAL(this);
+        ClienteDAL_BALG clienteDAL = new ClienteDAL_BALG(this);
 
         String nombre = editTextNombre.getText().toString();
         String apellido = editTextApellido.getText().toString();
@@ -83,7 +83,7 @@ public class BALG_CrudClientes extends AppCompatActivity {
         String passwd = editTextPasswd.getText().toString();
 
         if(!nombre.equals("") && !apellido.equals("") && !correo.equals("")){
-            BALG_Cliente cliente = new BALG_Cliente();
+            Cliente_BALG cliente = new Cliente_BALG();
             cliente.setNombre(nombre);
             cliente.setApellido(apellido);
             cliente.setCorreo(correo);
@@ -113,13 +113,13 @@ public class BALG_CrudClientes extends AppCompatActivity {
     }
     public void editarConClase(){
 
-        BALG_ClienteDAL clienteDAL = new BALG_ClienteDAL(this);
+        ClienteDAL_BALG clienteDAL = new ClienteDAL_BALG(this);
         String codigo = editTextCodigo.getText().toString();
         String nombre = editTextNombre.getText().toString();
         String apellido = editTextApellido.getText().toString();
         String correo = editTextCorreo.getText().toString();
 
-        BALG_Cliente cliente = new BALG_Cliente();
+        Cliente_BALG cliente = new Cliente_BALG();
         cliente.setCodigo(Integer.valueOf(codigo));
         cliente.setNombre(nombre);
         cliente.setApellido(apellido);
@@ -141,7 +141,7 @@ public class BALG_CrudClientes extends AppCompatActivity {
     }
     public void eliminarConClase(){
 
-        BALG_ClienteDAL clienteDAL = new BALG_ClienteDAL(this);
+        ClienteDAL_BALG clienteDAL = new ClienteDAL_BALG(this);
         String codigo = editTextCodigo.getText().toString();
 
         int cantidad = clienteDAL.deleteDAL(Integer.valueOf(codigo));
@@ -163,10 +163,10 @@ public class BALG_CrudClientes extends AppCompatActivity {
     }
     public void buscarConClase(){
 
-        BALG_ClienteDAL clienteDAL = new BALG_ClienteDAL(this);
+        ClienteDAL_BALG clienteDAL = new ClienteDAL_BALG(this);
         String codigo = editTextCodigo.getText().toString();
 
-        BALG_Cliente cliente = new BALG_Cliente();
+        Cliente_BALG cliente = new Cliente_BALG();
         cliente=clienteDAL.selectByCodigoDAL(Integer.valueOf(codigo));
 
         if(cliente!=null)

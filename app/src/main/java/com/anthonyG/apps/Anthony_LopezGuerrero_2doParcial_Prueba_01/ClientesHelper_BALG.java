@@ -5,12 +5,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.Nullable;
 
-public class BALG_ClientesHelper extends SQLiteOpenHelper {
+public class ClientesHelper_BALG extends SQLiteOpenHelper {
     private String createTable_Clientes = "CREATE TABLE Clientes " +
             "(Codigo INTEGER PRIMARY KEY AUTOINCREMENT, " + "Nombre TEXT, " +
             "Apellido TEXT, " + "Correo TEXT )";
 
-    public BALG_ClientesHelper(@Nullable Context context, @Nullable String name,
+    public ClientesHelper_BALG(@Nullable Context context, @Nullable String name,
                                @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }

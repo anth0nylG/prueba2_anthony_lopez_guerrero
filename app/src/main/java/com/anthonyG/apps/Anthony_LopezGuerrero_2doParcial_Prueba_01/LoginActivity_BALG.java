@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class BALG_LoginActivity extends AppCompatActivity {
+public class LoginActivity_BALG extends AppCompatActivity {
 
     private EditText editTextUsr;
     private EditText editTextPasswd;
@@ -45,10 +45,10 @@ public class BALG_LoginActivity extends AppCompatActivity {
 
     private void ValidarUsuario(View view) {
 
-        BALG_ClienteDAL clienteDAL = new BALG_ClienteDAL(this);
+        ClienteDAL_BALG clienteDAL = new ClienteDAL_BALG(this);
         String usr = editTextUsr.getText().toString();
         String passwd = editTextPasswd.getText().toString();
-        BALG_Cliente cliente = new BALG_Cliente();
+        Cliente_BALG cliente = new Cliente_BALG();
 //        cliente=clienteDAL.selectByUsrDAL(usr.toString());
 
 
@@ -64,13 +64,13 @@ public class BALG_LoginActivity extends AppCompatActivity {
             Toast.makeText(this, "No se encontraron registros del cliente en la tabla", Toast.LENGTH_SHORT).show();
         }
 
-        Intent flags = new Intent(this, MainActivity.class);
+        Intent flags = new Intent(this, MainActivity_BALG.class);
         startActivity(flags);
 
     }
 
     private void EditUserInformation(View view) {
-        Intent crudActivity = new Intent(this,BALG_CrudClientes.class);
+        Intent crudActivity = new Intent(this, CrudClientes_BALG.class);
         startActivity(crudActivity);
     }
 }

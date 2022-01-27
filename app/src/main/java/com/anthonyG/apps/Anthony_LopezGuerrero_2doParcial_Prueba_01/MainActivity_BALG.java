@@ -15,12 +15,12 @@ import android.view.MenuItem;
 import com.anthonyG.apps.eventhandlers.PreferenceChangeListener;
 import com.anthonyG.apps.lifecyclehelpers.QuizViewModel;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity_BALG extends AppCompatActivity {
     public static final String CHOICES = "pref_numberOfChoices";
     public static final String REGIONS = "pref_regionsToInclude";
     private boolean deviceIsPhone = true;
     private boolean preferencesChanged = true;
-    private MainActivityFragment quizFragment;
+    private MainActivityFragment_BALG quizFragment;
     private QuizViewModel quizViewModel;
     private OnSharedPreferenceChangeListener preferencesChangeListener;
 
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         if (preferencesChanged) {
-            this.quizFragment = (MainActivityFragment) getSupportFragmentManager()
+            this.quizFragment = (MainActivityFragment_BALG) getSupportFragmentManager()
                     .findFragmentById(R.id.quizFragment);
             this.quizViewModel.setGuessRows(PreferenceManager.getDefaultSharedPreferences(this)
                     .getString(CHOICES, null));
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                 Configuration.SCREENLAYOUT_SIZE_MASK;
     }
 
-    public MainActivityFragment getQuizFragment() {
+    public MainActivityFragment_BALG getQuizFragment() {
         return this.quizFragment;
     }
 

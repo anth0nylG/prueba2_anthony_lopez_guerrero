@@ -7,17 +7,17 @@ import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
 
-public class BALG_ClienteDAL {
-    private BALG_ClientesHelper clientesHelper; // crea la BD
+public class ClienteDAL_BALG {
+    private ClientesHelper_BALG clientesHelper; // crea la BD
     private SQLiteDatabase sql;
     private Context context;
 
-    public BALG_ClienteDAL(Context context){
+    public ClienteDAL_BALG(Context context){
         this.context=context;
     }
 
     public void openDAL(){
-        clientesHelper=new BALG_ClientesHelper(context,"ClientesDB",null,1);
+        clientesHelper=new ClientesHelper_BALG(context,"ClientesDB",null,1);
         sql=clientesHelper.getWritableDatabase();
     }
 
@@ -25,7 +25,7 @@ public class BALG_ClienteDAL {
         sql.close();
     }
 
-    public long insertDAL(BALG_Cliente cliente){
+    public long insertDAL(Cliente_BALG cliente){
         long count =0;
         try {
             this.openDAL();
@@ -44,8 +44,8 @@ public class BALG_ClienteDAL {
         return count;
     }
 
-    public BALG_Cliente selectByCodigoDAL(int codigo){
-        BALG_Cliente cliente=null;
+    public Cliente_BALG selectByCodigoDAL(int codigo){
+        Cliente_BALG cliente=null;
         try {
             this.openDAL();
             String select = "SELECT Codigo, Nombre, Apellido, Correo FROM Clientes WHERE Codigo="+codigo;
@@ -53,7 +53,7 @@ public class BALG_ClienteDAL {
 
             if(cursor.moveToFirst())
             {
-                cliente = new BALG_Cliente();
+                cliente = new Cliente_BALG();
                 cliente.setNombre(cursor.getString(1));
                 cliente.setApellido(cursor.getString(2));
                 cliente.setCorreo(cursor.getString(3));
@@ -96,8 +96,8 @@ public class BALG_ClienteDAL {
         return list;
     }
 
-    public ArrayList<BALG_Cliente> selectDAL2(){
-        ArrayList<BALG_Cliente> list = null;
+    public ArrayList<Cliente_BALG> selectDAL2(){
+        ArrayList<Cliente_BALG> list = null;
         try{
             this.openDAL();
             String select = "SELECT Codigo, Nombre, Apellido, Correo FROM Clientes";
@@ -105,9 +105,9 @@ public class BALG_ClienteDAL {
 
             if(cursor.moveToFirst())
             {
-                list = new ArrayList<BALG_Cliente>();
+                list = new ArrayList<Cliente_BALG>();
                 do{
-                    BALG_Cliente cliente = new BALG_Cliente();
+                    Cliente_BALG cliente = new Cliente_BALG();
                     cliente.setCodigo(Integer.valueOf(cursor.getString(0)));
                     cliente.setNombre(cursor.getString(1));
                     cliente.setApellido(cursor.getString(2));
@@ -139,7 +139,7 @@ public class BALG_ClienteDAL {
         return count;
     }
 
-    public int updateDAL(BALG_Cliente cliente){
+    public int updateDAL(Cliente_BALG cliente){
         int count =0;
         try{
             this.openDAL();

@@ -31,7 +31,7 @@ public class ResultsDialogFragment extends DialogFragment{
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 try{
-                    MainActivityFragment quizFragment = (MainActivityFragment) getParentFragment();
+                    MainActivityFragment_BALG quizFragment = (MainActivityFragment_BALG) getParentFragment();
                     try{
                         quizFragment.resetQuiz();
                     }catch (Exception e){

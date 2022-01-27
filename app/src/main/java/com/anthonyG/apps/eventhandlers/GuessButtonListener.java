@@ -6,17 +6,17 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01.MainActivityFragment;
+import com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01.MainActivityFragment_BALG;
 import com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01.R;
 import com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01.ResultsDialogFragment;
 import com.anthonyG.apps.lifecyclehelpers.QuizViewModel;
 
 public class GuessButtonListener implements OnClickListener {
-    private MainActivityFragment mainActivityFragment;
+    private MainActivityFragment_BALG mainActivityFragmentBALG;
     private Handler handler;
 
-    public GuessButtonListener(MainActivityFragment mainActivityFragment) {
-        this.mainActivityFragment = mainActivityFragment;
+    public GuessButtonListener(MainActivityFragment_BALG mainActivityFragmentBALG) {
+        this.mainActivityFragmentBALG = mainActivityFragmentBALG;
         this.handler = new Handler();
     }
 
@@ -24,23 +24,23 @@ public class GuessButtonListener implements OnClickListener {
     public void onClick(View v) {
         Button guessButton = ((Button) v);
         String guess = guessButton.getText().toString();
-        String answer = this.mainActivityFragment.getQuizViewModel().getCorrectCountryName();
-        this.mainActivityFragment.getQuizViewModel().setTotalGuesses(1);
+        String answer = this.mainActivityFragmentBALG.getQuizViewModel().getCorrectCountryName();
+        this.mainActivityFragmentBALG.getQuizViewModel().setTotalGuesses(1);
 
         if (guess.equals(answer)) {
-            this.mainActivityFragment.getQuizViewModel().setCorrectAnswers(1);
-            this.mainActivityFragment.getAnswerTextView().setText(answer + "!");
-            this.mainActivityFragment.getAnswerTextView().setTextColor(
-                    this.mainActivityFragment.getResources().getColor(R.color.correct_answer));
+            this.mainActivityFragmentBALG.getQuizViewModel().setCorrectAnswers(1);
+            this.mainActivityFragmentBALG.getAnswerTextView().setText(answer + "!");
+            this.mainActivityFragmentBALG.getAnswerTextView().setTextColor(
+                    this.mainActivityFragmentBALG.getResources().getColor(R.color.correct_answer));
 
-            this.mainActivityFragment.disableButtons();
+            this.mainActivityFragmentBALG.disableButtons();
 
-            if (this.mainActivityFragment.getQuizViewModel().getCorrectAnswers()
+            if (this.mainActivityFragmentBALG.getQuizViewModel().getCorrectAnswers()
                     == QuizViewModel.getFlagsInQuiz()) {
                 ResultsDialogFragment quizResults = new ResultsDialogFragment();
                 quizResults.setCancelable(false);
                 try {
-                    quizResults.show(this.mainActivityFragment.getChildFragmentManager(), "Quiz Results");
+                    quizResults.show(this.mainActivityFragmentBALG.getChildFragmentManager(), "Quiz Results");
                 } catch (NullPointerException e) {
                     Log.e(QuizViewModel.getTag(),
                             "GuessButtonListener: this.mainActivityFragment.getFragmentManager() " +
@@ -52,12 +52,12 @@ public class GuessButtonListener implements OnClickListener {
                         new Runnable() {
                             @Override
                             public void run() {
-                                mainActivityFragment.animate(true);
+                                mainActivityFragmentBALG.animate(true);
                             }
                         }, 2000);
             }
         } else {
-            this.mainActivityFragment.incorrectAnswerAnimation();
+            this.mainActivityFragmentBALG.incorrectAnswerAnimation();
             guessButton.setEnabled(false);
         }
     }

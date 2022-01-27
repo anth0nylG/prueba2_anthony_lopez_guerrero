@@ -36,7 +36,7 @@
 
     <fragment
         android:id="@+id/quizFragment"
-        android:name="com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01.MainActivityFragment"
+        android:name="com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01.MainActivityFragment_BALG"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="16dp"

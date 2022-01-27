@@ -1,6 +1,6 @@
 package com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01;
 
-public class BALG_Cliente {
+public class Cliente_BALG {
     private int codigo;
     private String nombre;
     private String apellido;
@@ -8,10 +8,10 @@ public class BALG_Cliente {
     private String usr;
     private String passwd;
 
-    public BALG_Cliente() {
+    public Cliente_BALG() {
     }
 
-    public BALG_Cliente(int codigo, String nombre, String apellido, String correo, String usr, String passwd) {
+    public Cliente_BALG(int codigo, String nombre, String apellido, String correo, String usr, String passwd) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -20,7 +20,7 @@ public class BALG_Cliente {
         this.passwd = passwd;
     }
 
-    public BALG_Cliente(String nombre, String apellido, String correo) {
+    public Cliente_BALG(String nombre, String apellido, String correo) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;

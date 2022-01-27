@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".BALG_CrudClientes">
+    tools:context=".CrudClientes_BALG">
 
     <TextView
         android:layout_width="match_parent"

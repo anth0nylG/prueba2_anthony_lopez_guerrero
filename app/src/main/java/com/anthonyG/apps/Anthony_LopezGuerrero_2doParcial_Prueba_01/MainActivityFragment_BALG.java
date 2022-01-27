@@ -31,7 +31,7 @@ import android.widget.TableRow;
 import com.anthonyG.apps.eventhandlers.GuessButtonListener;
 import com.anthonyG.apps.lifecyclehelpers.QuizViewModel;
 
-public class MainActivityFragment extends Fragment {
+public class MainActivityFragment_BALG extends Fragment {
 
     private SecureRandom random;
     private Animation shakeAnimation;

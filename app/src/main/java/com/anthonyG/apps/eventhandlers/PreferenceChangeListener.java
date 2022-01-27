@@ -4,43 +4,43 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.widget.Toast;
 
-import com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01.MainActivity;
+import com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01.MainActivity_BALG;
 import com.anthonyG.apps.Anthony_LopezGuerrero_2doParcial_Prueba_01.R;
 
 import java.util.Set;
 
 public class PreferenceChangeListener implements OnSharedPreferenceChangeListener {
-    private MainActivity mainActivity;
+    private MainActivity_BALG mainActivityBALG;
 
-    public PreferenceChangeListener(MainActivity mainActivity) {
-        this.mainActivity = mainActivity;
+    public PreferenceChangeListener(MainActivity_BALG mainActivityBALG) {
+        this.mainActivityBALG = mainActivityBALG;
     }
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        this.mainActivity.setPreferencesChanged(true);
+        this.mainActivityBALG.setPreferencesChanged(true);
 
-        if (key.equals(this.mainActivity.getREGIONS())) {
-            this.mainActivity.getQuizViewModel().setGuessRows(sharedPreferences.getString(
-                    MainActivity.CHOICES, null));
-            this.mainActivity.getQuizFragment().resetQuiz();
-        } else if (key.equals(this.mainActivity.getCHOICES())) {
-            Set<String> regions = sharedPreferences.getStringSet(this.mainActivity.getREGIONS(),
+        if (key.equals(this.mainActivityBALG.getREGIONS())) {
+            this.mainActivityBALG.getQuizViewModel().setGuessRows(sharedPreferences.getString(
+                    MainActivity_BALG.CHOICES, null));
+            this.mainActivityBALG.getQuizFragment().resetQuiz();
+        } else if (key.equals(this.mainActivityBALG.getCHOICES())) {
+            Set<String> regions = sharedPreferences.getStringSet(this.mainActivityBALG.getREGIONS(),
                     null);
             if (regions != null && regions.size() > 0) {
-                this.mainActivity.getQuizViewModel().setRegionsSet(regions);
-                this.mainActivity.getQuizFragment().resetQuiz();
+                this.mainActivityBALG.getQuizViewModel().setRegionsSet(regions);
+                this.mainActivityBALG.getQuizFragment().resetQuiz();
             } else {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                regions.add(this.mainActivity.getString(R.string.default_region));
-                editor.putStringSet(this.mainActivity.getREGIONS(), regions);
+                regions.add(this.mainActivityBALG.getString(R.string.default_region));
+                editor.putStringSet(this.mainActivityBALG.getREGIONS(), regions);
                 editor.apply();
-                Toast.makeText(this.mainActivity, R.string.default_region_message,
+                Toast.makeText(this.mainActivityBALG, R.string.default_region_message,
                         Toast.LENGTH_LONG).show();
             }
         }
 
-        Toast.makeText(this.mainActivity, R.string.restarting_quiz,
+        Toast.makeText(this.mainActivityBALG, R.string.restarting_quiz,
                 Toast.LENGTH_SHORT).show();
     }
 }
